@@ -1,0 +1,25 @@
+%h1 New campaign
+
+%form#new-campaign{:name => "campaign"}
+  .field
+    %label{:for => "name"} Name
+    %input#name{:type => "text", :name => "name", :value => @model.name}
+
+  .field
+    %input#countriesTypehead{:type => "text", :data-provide => "typeahead"}
+
+  .field
+    %a.btn{:class => 'addCountry'} Add
+
+  #countries
+    .field
+      %select{:name => 'countries_ids[]'}
+        - for row in @countries.models
+          %option{:value => row.get('id')}
+            = row.get('name')
+
+  .actions
+    %a.btn{:type => "submit", :value => "Create Campaign"}
+      Create
+  
+%a.btn{:href => "#campaigns"} Back
