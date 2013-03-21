@@ -1,9 +1,5 @@
 %h1 Listing campaigns
-%a.btn{:href => "#campaigns/new"} New Campaign
+.well
+  %a.btn{:href => "#campaigns/new"} New Campaign
 %br
-%table#campaignsTable
-  %tr
-    %th Name
-    %th
-    %th
-%br/
+%table.table#campaignsTable

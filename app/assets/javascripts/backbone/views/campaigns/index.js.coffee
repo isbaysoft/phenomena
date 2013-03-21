@@ -10,7 +10,7 @@ class App.Views.Campaigns.Index extends Backbone.View
 
   renderItem: (item) =>
     itemView = new App.Views.Campaigns.Item {model: item}
-    @$el.append itemView.render().el
+    @$el.find('.table').append itemView.render().el
 
   render: =>
     @$el.html @template()

@@ -1,9 +1,6 @@
 .hero-unit
   %h1 Phehomena test
-  %p.lead The awesome test application for Phenomena!!!
-  %div
-    %a.btn.btn-large{:href => '#/Campaigns'} You can goto view all Campaigns
-  %br
-  %div.pull-right
-    %span or
-    %a.btn.btn-large.btn-primary{:href => '#/Campaigns/new'} Create new Campaign
+  %p.lead duration aprx 12 hrs
+  %div.btn-group
+    %a.btn.btn-large{:href => '#campaigns'} You can goto view all Campaigns
+    %a.btn.btn-large.btn-primary{:href => '#campaigns/new'} Create new Campaign

@@ -3,7 +3,7 @@ class CampaignsController < ApplicationController
   respond_to :json
 
   def index
-    respond_with Campaign.all, include: :countries
+    respond_with Campaign.all
   end
 
   def create

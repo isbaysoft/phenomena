@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.easing.1.3
 
 // Loads all Bootstrap javascripts
 //= require bootstrap

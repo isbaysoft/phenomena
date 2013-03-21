@@ -1,25 +1,57 @@
-%h1 New campaign
+%form.form-horizontal#campaigForm{:name => "campaign"}
 
-%form#new-campaign{:name => "campaign"}
-  .field
-    %label{:for => "name"} Name
-    %input#name{:type => "text", :name => "name", :value => @model.name}
+  .fieldset
+    %legend Campaign
 
-  .field
-    %input#countriesTypehead{:type => "text", :data-provide => "typeahead"}
+  .well
+    %button.btn.btn-primary{:type => "submit"} Save changes
+    %a.btn{type: => "button", :href => "#campaigns"} Cancel
+    
+  .control-group
+    %label.control-label Campaign name
+    .controls
+      %input#name{:type => "text", :name => "name", :value => @model.name}
 
-  .field
-    %a.btn{:class => 'addCountry'} Add
+  .control-group
+    %label.control-label Start
+    .controls
+      %input.datepicker#date_start{:type => "text", :name => "date_start", :value => @model.date_start}
 
-  #countries
-    .field
-      %select{:name => 'countries_ids[]'}
-        - for row in @countries.models
-          %option{:value => row.get('id')}
-            = row.get('name')
+  .control-group
+    %label.control-label End
+    .controls
+      %input.datepicker#date_end{:type => "text", :name => "date_end", :value => @model.date_end}
 
-  .actions
-    %a.btn{:type => "submit", :value => "Create Campaign"}
-      Create
-  
-%a.btn{:href => "#campaigns"} Back
+  .control-group
+    %label.control-label Countries
+    .controls
+      %a.btn.btn-primary{"data-toggle" => "modal", :href => "#countryFormContainer", :role => "button"} Add new country
+
+  #countriesContainer
+
+#countryFormContainer.modal.hide.fade{:role => "dialog"}
+  .modal-header
+    %button.close{"data-dismiss" => "modal", :type => "button"} ×
+    %h3 New country
+  .modal-body
+    %form#countryForm.form-inline
+      .control-group
+        .controls
+          %input#countriesTypehead{:type => "text", :data-provide => "typeahead", :autocomplete => "off"}
+          %span.help-inline Countries here
+      .control-group
+        .controls
+          %input#languagesTypehead{:type => "text", :data-provide => "typeahead", :autocomplete => "off"}
+          %span.help-inline Languages here
+      .control-group
+        .controls
+          %ul#languagesCountainer
+
+  .modal-footer
+    %button.btn{"data-dismiss" => "modal"} Close
+    %button.btn.btn-primary#countyFormSubmit Create
+
+:javascript
+  $(function(){
+    $(document).trigger('App:CampaignsTypehead:bind')
+  })

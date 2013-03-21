@@ -1,0 +1,8 @@
+.control-group
+  %label.control-label = @get('country')
+  .controls
+    - if @get('languages')
+      - for language in @get('languages')
+        %span.btn
+          = language
+

@@ -26,6 +26,7 @@ group :test, :development do
   gem "rspec-rails", "~> 2.0"
   gem 'shoulda'
   gem 'cucumber-rails', :require => false
+  gem 'capybara'
   gem 'database_cleaner'
   gem 'pry-rails'
   gem 'pry-nav'
