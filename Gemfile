@@ -30,6 +30,12 @@ group :test, :development do
   gem 'database_cleaner'
   gem 'pry-rails'
   gem 'pry-nav'
+
+  gem 'capistrano'
+  gem 'capistrano_colors'
+  gem 'capistrano-unicorn', require: false
+  gem 'capistrano-deploy', require: false
+  gem 'rvm-capistrano', require: false
 end
 
 gem 'jquery-rails'
